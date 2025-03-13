@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class EmployeeData {
+public class EmployeeSalaryCalculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -18,7 +18,7 @@ public class EmployeeData {
         System.out.print("Enter employee number: ");
         int employeeNumber = scanner.nextInt();
 
-        // Check if employee exists
+        // Search for employee index
         int index = -1;
         for (int i = 0; i < employeeNumbers.length; i++) {
             if (employeeNumbers[i] == employeeNumber) {
@@ -36,7 +36,7 @@ public class EmployeeData {
             System.out.print("Enter hours worked this week: ");
             double hoursWorked = scanner.nextDouble();
 
-            // Calculate total earnings (assuming monthly salary is for 160 hours)
+            // Calculate total earnings
             double hourlyRate = basicSalary / 160;
             double totalEarnings = hoursWorked * hourlyRate;
 
@@ -44,7 +44,7 @@ public class EmployeeData {
             double sss = calculateSSS(basicSalary);
             double philHealth = calculatePhilHealth(basicSalary);
             double pagIbig = calculatePagIbig(basicSalary);
-            double withholdingTax = calculateWithholdingTax(basicSalary);
+            double withholdingTax = calculateWithholdingTax(totalEarnings);
 
             // Total salary deductions
             double salaryDeductions = sss + philHealth + pagIbig;
@@ -62,7 +62,7 @@ public class EmployeeData {
             System.out.println("SSS: " + sss);
             System.out.println("PhilHealth: " + philHealth);
             System.out.println("Pag-IBIG: " + pagIbig);
-            System.out.println("Withholding Tax: " + withholdingTax);
+            System.out.println("Withholding Tax (on total earnings): " + withholdingTax);
             System.out.println("\nSalary Deductions: " + salaryDeductions);
             System.out.println("Net Income: " + netIncome);
         }
@@ -91,12 +91,12 @@ public class EmployeeData {
         return (deduction > 100) ? 100 : deduction; // Max deduction is 100
     }
 
-    public static double calculateWithholdingTax(double salary) {
-        if (salary >= 20833 && salary < 33333) return (salary - 20833) * 0.20;
-        if (salary >= 33333 && salary < 66667) return 2500 + (salary - 33333) * 0.25;
-        if (salary >= 66667 && salary < 166667) return 10833 + (salary - 66667) * 0.30;
-        if (salary >= 166667 && salary < 666667) return 40833.33 + (salary - 166667) * 0.32;
-        if (salary >= 666667) return 200833.33 + (salary - 666667) * 0.35;
+    public static double calculateWithholdingTax(double totalEarnings) {
+        if (totalEarnings >= 20833 && totalEarnings < 33333) return (totalEarnings - 20833) * 0.20;
+        if (totalEarnings >= 33333 && totalEarnings < 66667) return 2500 + (totalEarnings - 33333) * 0.25;
+        if (totalEarnings >= 66667 && totalEarnings < 166667) return 10833 + (totalEarnings - 66667) * 0.30;
+        if (totalEarnings >= 166667 && totalEarnings < 666667) return 40833.33 + (totalEarnings - 166667) * 0.32;
+        if (totalEarnings >= 666667) return 200833.33 + (totalEarnings - 666667) * 0.35;
         return 0.0; // No tax if below 20,833
     }
 }
