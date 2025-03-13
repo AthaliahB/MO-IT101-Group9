@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class EmployeeSalaryCalculator {
+public class EmployeeData {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -54,17 +54,17 @@ public class EmployeeSalaryCalculator {
 
             // Display results
             System.out.println("\nEmployee #" + employeeNumber);
-            System.out.println("Basic Salary: " + basicSalary);
-            System.out.println("Hourly Rate: " + hourlyRate);
-            System.out.println("Hours Worked: " + hoursWorked);
-            System.out.println("Total Earnings: " + totalEarnings);
+            System.out.println("Basic Salary: " + basicSalary + " Php");
+            System.out.println("Hourly Rate: " + hourlyRate + " Php");
+            System.out.println("Hours Worked: " + hoursWorked + " hrs");
+            System.out.println("Total Earnings: " + totalEarnings + " Php");
             System.out.println("\nDeductions:");
-            System.out.println("SSS: " + sss);
-            System.out.println("PhilHealth: " + philHealth);
-            System.out.println("Pag-IBIG: " + pagIbig);
-            System.out.println("Withholding Tax (on total earnings): " + withholdingTax);
-            System.out.println("\nSalary Deductions: " + salaryDeductions);
-            System.out.println("Net Income: " + netIncome);
+            System.out.println("SSS: " + sss + " Php");
+            System.out.println("PhilHealth: " + philHealth + " Php");
+            System.out.println("Pag-IBIG: " + pagIbig + " Php");
+            System.out.println("Withholding Tax (on total earnings): " + withholdingTax + " Php");
+            System.out.println("\nSalary Deductions: " + salaryDeductions + " Php");
+            System.out.println("Net Income: " + netIncome + " Php");
         }
 
         scanner.close();
