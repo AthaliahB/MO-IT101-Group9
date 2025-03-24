@@ -8,6 +8,36 @@ public class EmployeeData {
                                  10011, 10012, 10013, 10014, 10015, 10016, 10017, 10018, 10019, 10020, 
                                  10021, 10022, 10023, 10024, 10025, 10026, 10027, 10028, 10029, 10030, 
                                  10031, 10032, 10033, 10034};
+        
+        String[] firstNames = {"Manuel III", "Antonio", "Bianca Sofia", "Isabella", "Eduard", "Andrea Mae",
+                               "Brad", "Alice", "Rosie", "Roderick", "Anthony", "Josie", "Martha", "Leila",
+                               "Fredrick", "Christian", "Selena", "Allison", "Cydney", "Mark", "Darlene", 
+                               "Kolby", "Vella", "Tomas", "Jacklyn", "Percival", "Garfield", "Lizeth", 
+                               "Carol", "Emelia", "Delia", "John Rafael", "Carlos Ian", "Beatriz"};
+        
+        String[] lastNames = {"Garcia", "Lim", "Aquino", "Reyes", "Hernandez", "Villanueva", "San Jose", 
+                                "Romualdez", "Atienza", "Alvaro", "Salcedo", "Lopez", "Farala", "Martinez",
+                                "Romualdez", "Mata", "De Leon", "San Jose", "Rosario", "Bautista", "Lazaro",
+                                "Delos Santos", "Santos", "Del Rosario", "Tolentino", "Gutierrez", "Manalaysay",
+                                "Villegas", "Ramos", "Maceda", "Aguilar", "Castro", "Martinez", "Santos"};
+        
+        String[] status = {"Regular", "Regular", "Regular", "Regular", "Regular", "Regular","Regular", 
+                                "Regular", "Regular", "Regular", "Regular", "Regular", "Regular", "Regular",
+                                 "Regular", "Regular", "Regular", "Regular", "Regular", "Regular", 
+                                 "Probationary", "Probationary", "Probationary", "Probationary","Probationary", 
+                                 "Probationary", "Probationary", "Probationary", "Probationary", "Probationary", 
+                                 "Probationary", "Regular", "Regular", "Regular",};
+        
+        String [] position = {"Chief Executive Officer", "Chief Operating Officer", "Chief Finance Officer",
+                                "Chief Marketing Officer", "IT Operations and Systems", "HR Manager", 
+                                "HR Team Leader", "HR Rank and File", "HR Rank and File", "Accounting Head",
+                                "Payroll Manager", "Payroll Team Leader", "Payroll Rank and File", "Payroll Rank and File",
+                                 "Account Manager", "Account Team Leader", "Account Team Leader", "Account Rank and File",
+                                "Account Rank and File", "Account Rank and File", "Account Rank and File", "Account Rank and File",
+                                "Account Rank and File", "Account Rank and File", "Account Rank and File", "Account Rank and File",
+                                "Account Rank and File", "Account Rank and File", "Account Rank and File", "Account Rank and File",
+                                "Account Rank and File", "Sales & Marketing", "Supply Chain and Logistics",
+                                 "Customer Service and Relations"};
 
         String[] basicSalaries = {"90000", "60000", "60000", "60000", "52670", "52670", "42975", "22500", "22500", 
                                   "52670", "50825", "38475", "24000", "24000", "53500", "42975", "41850", "22500", 
@@ -17,6 +47,7 @@ public class EmployeeData {
         // Prompt for employee number
         System.out.print("Enter employee number: ");
         int employeeNumber = scanner.nextInt();
+       
 
         // Search for employee index
         int index = -1;
@@ -53,6 +84,12 @@ public class EmployeeData {
             double netIncome = (totalEarnings - salaryDeductions) - withholdingTax;
 
             // Display results
+             System.out.println("\n--- Employee Details ---");
+            System.out.println("Employee Number: " + employeeNumbers[index]);
+            System.out.println("Last Name: " + lastNames[index]);
+            System.out.println("First Name: " + firstNames[index]);
+            System.out.println("Position: " + position[index]);
+            System.out.println("Status: " + status[index]);
             System.out.println("\nEmployee #" + employeeNumber);
             System.out.println("Basic Salary: " + basicSalary + " Php");
             System.out.println("Hourly Rate: " + hourlyRate + " Php");
